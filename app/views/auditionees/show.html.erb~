@@ -1,0 +1,12 @@
+<center>
+
+<h1> Congrats you are now registered for the audition! </h1><br>
+
+<h1> Your casting number is: </h1>
+<h1><%= @cast_num %></h1><br>
+
+<p><%= link_to 'Back to Registration', new_article_path %>
+
+</center>
+
+

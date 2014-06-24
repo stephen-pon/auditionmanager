@@ -1,0 +1,53 @@
+<center>
+
+<h1>AFX AUDITION REGISTRATION</h1>
+
+<%= form_for :auditionee, url: auditionees_path do |f| %>
+  <% if @auditionee.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@auditionee.errors.count, "error") %> failed your registration:</h2>
+    <ul>
+    <% @auditionee.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <p>
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </p>
+
+  <p>
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %><br>
+  </p>
+
+  <p>
+    <%= f.label :phone_number %><br> 
+    (no punctuation or spaces please!)<br>
+    <%= f.text_field :phone_number %><br>
+  </p>
+
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %><br>
+  </p>
+
+  <p>
+    <%= f.label :facebook_url %><br>
+    www.facebook.com/<%= f. text_field :facebook_url %> (optional)
+  </p>
+
+  <p>
+    <%= radio_button_tag "auditionee[gender]", "male" %> Male
+    <%= radio_button_tag "auditionee[gender]", "female" %> Female
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+</center>
