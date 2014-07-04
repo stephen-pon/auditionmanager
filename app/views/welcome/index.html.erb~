@@ -1,2 +1,2 @@
 <h1> WELCOME TO THE AFX AUDITION MANAGER! </h1><br>
-<p> put a link to auditionee registration here </p>
+<p> <%= link_to 'Registration', new_auditionee_path %> </p>
