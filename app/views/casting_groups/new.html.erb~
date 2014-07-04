@@ -1,0 +1,22 @@
+<h1>Create a New Casting Group</h1>
+
+<table>
+  <tr>
+    <th>Casting Number</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+  </tr>
+
+  <% @auditionees.each do |auditionee| %>
+    <tr>
+      <td><%= auditionee.id %></td>
+      <td><%= auditionee.first_name %></td>
+      <td><%= auditionee.last_name %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<h2>This will be a link to add auditionees to casting group</h2>
+
+<h2>This will be a submit link labeled create group</h2>

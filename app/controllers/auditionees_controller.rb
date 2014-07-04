@@ -5,7 +5,7 @@ class AuditioneesController < ApplicationController
   end
 
   def create
-    @auditionee = Auditionee.new(article_params)
+    @auditionee = Auditionee.new(auditionee_params)
 
     if @auditionee.save
       redirect_to @auditionee
@@ -31,7 +31,7 @@ class AuditioneesController < ApplicationController
   end
   
   private 
-    def article_params
+    def auditionee_params
       params.require(:auditionee).permit(:first_name, :last_name, :phone_number, :facebook_url, :email, :gender)
     end
 

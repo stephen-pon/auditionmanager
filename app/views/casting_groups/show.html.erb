@@ -1,0 +1,40 @@
+<h1>Casting Group Number <%= @casting_group.id %></h1>
+
+<h2>Members of this group</h2>
+<table>
+  <tr>
+    <th>Casting Number</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th colspan = "1"></th>
+  <tr>
+
+  <% @auditionees.each do |auditionee| %>
+    <tr>
+      <td><%= auditionee.id %></td>
+      <td><%= auditionee.first_name %></td>
+      <td><%= auditionee.last_name %></td>
+      <td><%= form_tag remove_auditionee_path, :method => :put do %>
+	    <%= hidden_field_tag :group_num, @casting_group_id %>
+	    <%= hidden_field_tag :auditionee_id, auditionee.id %>
+	    <%= submit_tag "remove", :name => nil %>
+	  <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= form_tag casting_groups_show_path, :method => :post do %>
+  <p>
+    <%= hidden_field_tag :id, @casting_group_id %>
+    <%= text_field_tag :auditionee_id, params[:auditionee_id] %>
+    <%= submit_tag "Add Auditionee", :name => nil %>
+  </p>
+<% end %>
+
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<%= link_to 'Back to All Casting Groups', casting_groups_path %>

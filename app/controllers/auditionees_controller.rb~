@@ -7,8 +7,11 @@ class AuditioneesController < ApplicationController
   def create
     @auditionee = Auditionee.new(article_params)
 
-    @auditionee.save
-    redirect_to @auditionee
+    if @auditionee.save
+      redirect_to @auditionee
+    else
+      render 'new'
+    end
   end
 
   def show

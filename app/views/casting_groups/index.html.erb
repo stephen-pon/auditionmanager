@@ -1,0 +1,35 @@
+<h1>All Casting Groups</h1>
+
+<table>
+  <tr>
+    <th>Group Number</th>
+    <th>Video</th>
+    <th colspan="2"></th>
+  </tr>
+
+  <% @casting_groups.each do |casting_group| %>
+    <tr>
+      <td><%= link_to casting_group.id, casting_group %></td>
+      <td><% if casting_group.video == nil  %>
+	    <%= form_tag add_video_path, :method => :put do %>
+	      <%= hidden_field_tag :group_num, casting_group.id %>
+	      <%= text_field_tag :video %>
+	      <%= submit_tag "Add Video", :name => nil %>
+	    <% end %>
+          <% else %>
+            <%= link_to("Group " + casting_group.id.to_s + " video", casting_group.video) %> 
+          <% end %>
+      </td>
+      <td><% if casting_group.video %>
+	    <%= form_tag remove_video_path, :method => :put do %>
+	      <%= hidden_field_tag :group_num, casting_group.id %>
+	      <%= submit_tag "Remove Video", :name => nil %>
+	    <% end %>
+	  <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Create New Casting Group', new_casting_group_path %>
+

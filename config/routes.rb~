@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
 
+  put 'casting_groups/index', to: 'casting_groups#add_video', as: 'add_video'
+  post 'casting_groups/show', to: 'casting_groups#add_auditionee'
+  put 'casting_groups/show', to: 'casting_groups#remove_auditionee', as: 'remove_auditionee'
+  resources :casting_groups 
+  get 'casting_groups/index'
+
+  get '/auditionees/search', to: 'auditionees#search'
   resources :auditionees
 
   get 'welcome/index'
-  get '/auditionees/search', to: 'auditionees#search'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

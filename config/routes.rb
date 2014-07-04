@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  put 'casting_groups/index', to: 'casting_groups#add_video', as: 'add_video'
+  put 'casting_groups/index', to: 'casting_groups#remove_video', as: 'remove_video'
+  post 'casting_groups/show', to: 'casting_groups#add_auditionee'
+  put 'casting_groups/show', to: 'casting_groups#remove_auditionee', as: 'remove_auditionee'
+  resources :casting_groups 
+  get 'casting_groups/index'
+
   get '/auditionees/search', to: 'auditionees#search'
   resources :auditionees
 
