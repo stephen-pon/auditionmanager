@@ -1,0 +1,6 @@
+class AddAuthToDirectors < ActiveRecord::Migration
+  def change
+    add_column :directors, :encrypted_password, :string
+    add_column :directors, :salt, :string
+  end
+end

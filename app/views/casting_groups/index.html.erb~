@@ -24,6 +24,7 @@
 	    <%= form_tag remove_video_path, :method => :put do %>
 	      <%= hidden_field_tag :group_num, casting_group.id %>
 	      <%= submit_tag "Remove Video", :name => nil %>
+	    <% end %>
 	  <% end %>
       </td>
     </tr>

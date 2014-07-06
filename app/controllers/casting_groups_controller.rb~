@@ -47,7 +47,7 @@ class CastingGroupsController < ApplicationController
     curr_casting_group = CastingGroup.find_by_id(params[:group_num])
     curr_auditionee = Auditionee.find_by_id(params[:auditionee_id])
     curr_casting_group.group_order.delete(curr_auditionee.id)
-    curr_casting_group.auditionees.delete(curr_auditionee.id)
+    curr_casting_group.auditionees.delete(curr_auditionee)
     curr_casting_group.save()
     redirect_to curr_casting_group
   end

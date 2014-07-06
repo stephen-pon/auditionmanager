@@ -1,5 +1,7 @@
 <h1> Search for casting numbers here! </h1>
 
+<%= link_to 'Back to Control Panel', @curr_director %>
+
 <%= form_tag auditionees_search_path, :method => :get do %>
   <p>
     <%= text_field_tag :search, params[:search] %>

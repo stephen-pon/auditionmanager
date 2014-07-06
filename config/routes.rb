@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  post 'preferences/show', to: 'preferences#add_auditionee'
+  put 'preferences/show', to: 'preferences#remove_auditionee'
+  resources :directors
+  resources :rosters
+  resources :preferences
+
+  resources :sessions
+
   put 'casting_groups/index', to: 'casting_groups#add_video', as: 'add_video'
   put 'casting_groups/index', to: 'casting_groups#remove_video', as: 'remove_video'
   post 'casting_groups/show', to: 'casting_groups#add_auditionee'
@@ -7,6 +15,7 @@ Rails.application.routes.draw do
   resources :casting_groups 
   get 'casting_groups/index'
 
+  post '/auditionees/remove_ungrouped', to: 'auditionees#remove_ungrouped', as: 'remove_ungrouped'
   get '/auditionees/search', to: 'auditionees#search'
   resources :auditionees
 

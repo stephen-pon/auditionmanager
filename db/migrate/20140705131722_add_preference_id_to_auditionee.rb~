@@ -1,0 +1,4 @@
+class AddPreferenceIdToAuditionee < ActiveRecord::Migration
+  def change
+  end
+end

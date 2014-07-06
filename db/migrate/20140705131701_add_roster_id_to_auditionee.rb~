@@ -1,0 +1,4 @@
+class AddRosterIdToAuditionee < ActiveRecord::Migration
+  def change
+  end
+end

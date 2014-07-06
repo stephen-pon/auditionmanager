@@ -1,5 +1,12 @@
 <h1>All Auditionees</h1>
 
+<%= form_tag remove_ungrouped_path, :method => :post do %>
+  <p>
+    <%= submit_tag "Delete Ungrouped (WARNING DONT PRESS TILL AFTER AUDITION", :name => nil %>
+  </p>
+<% end %>
+
+
 <table>
   <tr>
     <th>First Name</th>

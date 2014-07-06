@@ -1,0 +1,9 @@
+<h1> DIRECTOR CONTROL PANEL</h1>
+<h2> Welcome Director of <%= @director.name %>! </h2>
+
+<%= link_to 'Auditionee Registration', new_auditionee_path %></br></br>
+<%= link_to 'Auditionee Search', auditionees_search_path %></br></br>
+<%= link_to 'Casting Groups', casting_groups_path %></br></br>
+<%= link_to 'Edit Preferences', @director.preference %></br></br>
+<%= link_to 'View Roster', @director.roster %></br></br>
+<%= link_to 'Logout', session_path, :method => 'DELETE' %>

@@ -1,0 +1,38 @@
+<h1> Edit your team preferences here! </h1>
+
+<h2>Your Current Preferences</h2>
+<table>
+  <tr>
+    <th>Casting Number</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th colspan="1"></td>
+  <tr>
+
+  <% @auditionees.each do |auditionee| %>
+    <tr>
+      <td><%= auditionee.id %></td>
+      <td><%= auditionee.first_name %></td>
+      <td><%= auditionee.last_name %></td>
+      <td><%= form_tag preferences_show_path, :method => :put do %>
+	    <%= hidden_field_tag :id, @preference.id %>
+	    <%= hidden_field_tag :auditionee_id, auditionee.id %>
+	    <%= submit_tag "remove", :name => nil %>
+	  <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= form_tag preferences_show_path, :method => :post do %>
+  <p>
+    <%= hidden_field_tag :id, @preference.id %>
+    <%= text_field_tag :auditionee_id, params[:auditionee_id] %>
+    <%= submit_tag "Add Auditionee", :name => nil %>
+  </p>
+<% end %>
+
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>

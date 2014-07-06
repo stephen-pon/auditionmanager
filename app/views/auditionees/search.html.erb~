@@ -1,6 +1,6 @@
 <h1> Search for casting numbers here! </h1>
 
-<%= form_tag auditionees_path, :method => :get do %>
+<%= form_tag auditionees_search_path, :method => :get do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>

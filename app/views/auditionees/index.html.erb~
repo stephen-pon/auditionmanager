@@ -1,5 +1,12 @@
 <h1>All Auditionees</h1>
 
+<%= form_tag remover_ungrouped_path, :method => :post do %>
+  <p>
+    <%= submit_tag "Delete Ungrouped (WARNING DONT PRESS TILL AFTER AUDITION", :name => nil %>
+  </p>
+<% end %>
+
+
 <table>
   <tr>
     <th>First Name</th>
@@ -23,5 +30,5 @@
 </table>
 
 <%= link_to 'Home', controller: 'welcome' %>
-<%= link_to 'Registration, new_auditionee_path %>
+<%= link_to 'Registration', new_auditionee_path %>
 

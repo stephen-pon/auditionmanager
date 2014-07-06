@@ -1,4 +1,6 @@
 class Auditionee < ActiveRecord::Base
+
+  belongs_to :casting_group, :roster, :preference
   
   validates :first_name, presence: true
   validates :last_name, presence: true

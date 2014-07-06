@@ -1,0 +1,16 @@
+<h1>All Teams</h1>
+
+<table>
+  <tr>
+    <th>Team Name</th>
+  </tr>
+
+  <% @directors.each do |director| %>
+    <tr>
+      <td><%= link_to director, director %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Create New Team', new_director_path %>
+

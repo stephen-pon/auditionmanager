@@ -1,4 +1,6 @@
 class CastingGroupsController < ApplicationController
+  
+  before_filter :authenticate_user
 
   def index
     @casting_groups = CastingGroup.all

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140704211908) do
+ActiveRecord::Schema.define(version: 20140705182825) do
 
   create_table "auditionees", force: true do |t|
     t.string   "first_name"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20140704211908) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "casting_group_id"
+    t.integer  "roster_id"
+    t.integer  "preference_id"
   end
 
   create_table "casting_groups", force: true do |t|
@@ -30,6 +32,25 @@ ActiveRecord::Schema.define(version: 20140704211908) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "group_order"
+  end
+
+  create_table "directors", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.string   "password"
+  end
+
+  create_table "preferences", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "director_id"
+  end
+
+  create_table "rosters", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "director_id"
   end
 
 end
